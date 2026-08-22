@@ -37,7 +37,29 @@ The input files required to run this script are provided in the `data/` director
 - `./data/Design_table.tsv` — experimental design and sample metadata;
 - `./data/ldec_gff_annotated.tsv` — gene annotation table.
 
-### 2. Functional annotation
+### 2. KEGG annotation and enrichment analysis
+
+KEGG functional annotation was generated for *L. decemlineata* genes and subsequently used to analyse the functional enrichment of differentially expressed genes.
+
+The notebook used for this step is: `scripts/02_KEGG_annotation_and_enrichment.ipynb`
+
+The KEGG annotation workflow uses:
+
+- `ldec_gff_annotated.tsv` — processed Ldec_2.0 gene annotation generated in Step 0;
+- `ldc00001.json` — KEGG Orthology (KO) BRITE hierarchy for *Leptinotarsa decemlineata* (KEGG organism code: `ldc`), obtained from the KEGG database.
+
+
+This step generates: ldec_genes_annotated_kegg.tsv — a gene-level KEGG annotation table for *L. decemlineata*, used in subsequent functional and enrichment analyses.
+
+The second part of the notebook performs KEGG over-representation analysis using differential expression results generated in Step 1.
+
+The enrichment analysis uses:
+
+- `DEG_ldec_DESeq2.xlsx`;
+- `DEG_ldec_DESeq2_bbas_vs_mrob.xlsx`.
+
+
+### 3. Functional annotation
 
 The functional annotation of *L. decemlineata* genes was expanded by integrating information from: NCBI RefSeq annotation, InterProScan, ProteInfer.
 
