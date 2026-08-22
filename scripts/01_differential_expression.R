@@ -1,10 +1,10 @@
 ## read DGE
 ## read gene expression raw counts
-counts = read.table('./ldec_dge_counts.tsv', header = T, row.names = 1)
+counts = read.table('./data/ldec_dge_counts.tsv', header = T, row.names = 1)
 ## read the samples data
-phen   = read.table('./Design_table.tsv', header = T, row.names = 1)
+phen   = read.table('./data/Design_table.tsv', header = T, row.names = 1)
 ## read the genes annotation data
-gff_anno <- read.table('./ldec_gff_annotated.tsv', header = T, sep = '\t',
+gff_anno <- read.table('./data/ldec_gff_annotated.tsv', header = T, sep = '\t',
                        quote = '',
                        stringsAsFactors = F)
 ## extract unique annotations
