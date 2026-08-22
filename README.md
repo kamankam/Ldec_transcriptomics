@@ -14,7 +14,7 @@ The analysis was performed in several consecutive stages.
 RNA-seq gene-level count tables generated after read mapping were combined into a single expression matrix.
 Genome annotation files for the Ldec_2.0 assembly (GCF_000500325.1) were processed to obtain gene identifiers and gene product annotations compatible with the downstream differential expression analysis. Reference genome annotation and protein sequences for the Ldec_2.0 assembly were obtained from NCBI RefSeq (https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/500/325/GCF_000500325.1_Ldec_2.0/)
 
- `/00_prepare_expression_inputs.ipynb` used for this step.
+ `scripts/00_prepare_expression_inputs.ipynb` used for this step.
 
 The main output files generated at this stage are:
 
@@ -33,9 +33,9 @@ The analysis was performed separately for haemocytes and fat body. For each tiss
 The script used for this analysis is available here: `scripts/01_differential_expression.R`
 The input files required to run this script are provided in the `data/` directory:
 
-- `ldec_dge_counts.tsv` — gene-level read count matrix;
-- `Design_table.tsv` — experimental design and sample metadata;
-- `ldec_gff_annotated.tsv` — gene annotation table.
+- `./data/ldec_dge_counts.tsv` — gene-level read count matrix;
+- `./data/Design_table.tsv` — experimental design and sample metadata;
+- `./data/ldec_gff_annotated.tsv` — gene annotation table.
 
 ### 2. Functional annotation
 
