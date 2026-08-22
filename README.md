@@ -9,6 +9,18 @@ the transcriptomic response of the Colorado potato beetle
 
 The analysis was performed in several consecutive stages.
 
+### 0. Preparation of expression-analysis input files
+
+RNA-seq gene-level count tables generated after read mapping were combined into a single expression matrix.
+Genome annotation files for the Ldec_2.0 assembly (GCF_000500325.1) were processed to obtain gene identifiers and gene product annotations compatible with the downstream differential expression analysis. Reference genome annotation and protein sequences for the Ldec_2.0 assembly were obtained from NCBI RefSeq (https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/500/325/GCF_000500325.1_Ldec_2.0/)
+
+ `/00_prepare_expression_inputs.ipynb` used for this step.
+
+The main output files generated at this stage are:
+
+- `ldec_dge_counts.tsv` — gene-level raw read count matrix;
+- `ldec_gff_annotated.tsv` — processed Ldec_2.0 gene annotation table containing gene identifiers and product annotations.
+
 ### 1. Differential gene expression analysis
 
 Differential gene expression was analysed in R using DESeq2.
@@ -43,7 +55,6 @@ The input files used at this stage include:
 - `interpro.csv` — functional annotation generated using InterProScan;
 - `protinfer.csv` — functional predictions generated using ProteInfer.
 
-Reference genome annotation and protein sequences for the Ldec_2.0 assembly were obtained from NCBI RefSeq (https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/500/325/GCF_000500325.1_Ldec_2.0/)
 Gene Ontology resources were obtained from the Gene Ontology Consortium and NCBI Gene (https://geneontology.org/docs/download-ontology/).
 
 The main extended annotation produced at this stage is `Ldec_gene2go_ncbi_ip_pi` (combined NCBI RefSeq, InterProScan, and ProteInfer gene-to-GO annotation) and `DEG_tables_all_annotated.xlsx`, containing differential expression tables supplemented with InterProScan and ProteInfer functional annotations.
