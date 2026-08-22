@@ -45,3 +45,5 @@ The input files used at this stage include:
 
 Reference genome annotation and protein sequences for the Ldec_2.0 assembly were obtained from NCBI RefSeq (https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/500/325/GCF_000500325.1_Ldec_2.0/)
 Gene Ontology resources were obtained from the Gene Ontology Consortium and NCBI Gene (https://geneontology.org/docs/download-ontology/).
+
+The main extended annotation produced at this stage is `Ldec_gene2go_ncbi_ip_pi` (combined NCBI RefSeq, InterProScan, and ProteInfer gene-to-GO annotation) and `DEG_tables_all_annotated.xlsx`, containing differential expression tables supplemented with InterProScan and ProteInfer functional annotations.
